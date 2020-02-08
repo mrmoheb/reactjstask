@@ -1,9 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import TodoList from './components/TodoList';
+import Posts from './components/Posts';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+test('renders Todo List', () => {
+  const { getByText } = render(<TodoList />);
+  const linkElement = getByText(/My Todo List/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+
+test('renders Posts', () => {
+  const { getByText } = render(<Posts />);
+  const linkElement = getByText(/Posts/i);
   expect(linkElement).toBeInTheDocument();
 });
